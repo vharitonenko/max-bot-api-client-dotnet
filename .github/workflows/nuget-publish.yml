@@ -33,46 +33,6 @@ jobs:
         dotnet-version: ${{ env.DOTNET_VERSION }}
     - name: Checkout
       uses: actions/checkout@v4
-
-    - name: Check folder
-      run: pwd
-
-    - name: List ALL files
-      run: |
-        echo "=== COMPLETE FILE LIST ==="
-        find . -type f | sort
-        echo ""
-        echo "=== TOTAL FILE COUNT ==="
-        find . -type f | wc -l
-        echo ""
-        echo "=== GIT STATUS ==="
-        git status
-        echo ""
-        echo "=== GIT BRANCH ==="
-        git branch -a
-        echo ""
-        echo "=== GIT SUBMODULES ==="
-        git submodule status
-
-    - name: Find and restore project
-      id: find_project
-      run: |
-        # Ищем csproj файл
-        CSPROJ_FILE=$(find . -name "*.csproj" -type f | head -1)
-        
-        # Находим ВСЕ csproj файлы
-        ALL_CSPROJ=$(find . -name "*.csproj" -type f)
-        echo "All csproj files found:"
-        echo "$ALL_CSPROJ"
-        echo "$CSPROJ_FILE"
-        echo ""  
-
-        if [ -z "$CSPROJ_FILE" ]; then
-          echo "ERROR: No .csproj file found!"
-          exit 1
-        fi
-
-        echo "Found project file: $CSPROJ_FILE"
       
     - name: Build project
       run: dotnet build ${{ env.PROJECT_PATH }} --configuration ${{ env.BUILD_CONFIGURATION }}
