@@ -37,6 +37,9 @@ jobs:
     - name: Check folder
       run: pwd
 
+    - name: Check folder
+      run: ls
+
     - name: Find and restore project
       id: find_project
       run: |
