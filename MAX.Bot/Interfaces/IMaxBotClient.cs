@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
-using System.Threading;
-using System.Collections.Generic;
+﻿using MAX.Bot.Interfaces.Models;
+using MAX.Bot.Interfaces.Models.Request;
+using MAX.Bot.Interfaces.Models.Response;
 
 namespace MAX.Bot.Interfaces;
 

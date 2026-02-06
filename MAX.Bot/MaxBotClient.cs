@@ -1,8 +1,11 @@
-﻿using MAX.Bot.Exceptions;
-using MAX.Bot.Interfaces;
-using System.Text;
+﻿using System.Text;
 using System.Text.Json;
 using System.Web;
+using MAX.Bot.Exceptions;
+using MAX.Bot.Interfaces;
+using MAX.Bot.Interfaces.Models;
+using MAX.Bot.Interfaces.Models.Request;
+using MAX.Bot.Interfaces.Models.Response;
 
 namespace MAX.Bot;
 
@@ -41,7 +44,6 @@ public class MaxBotClient : IMaxBotClient
     private async Task<T> SendRequestAsync<T>(HttpMethod method, string endpoint, object? data = null,
         CancellationToken cancellationToken = default)
     {
-        Console.WriteLine(endpoint);
         var requestUri = new Uri(_httpClient.BaseAddress!, endpoint);
         var request = new HttpRequestMessage(method, requestUri);
 

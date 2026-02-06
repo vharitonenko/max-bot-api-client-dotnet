@@ -1,7 +1,6 @@
 ﻿using System.Text.Json.Serialization;
-using static System.Net.Mime.MediaTypeNames;
 
-namespace MAX.Bot.Interfaces;
+namespace MAX.Bot.Interfaces.Models;
 
 /// <summary>
 /// Модель чата

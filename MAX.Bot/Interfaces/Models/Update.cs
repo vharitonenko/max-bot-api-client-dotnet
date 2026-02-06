@@ -1,7 +1,6 @@
-﻿using MAX.Bot.Interfaces;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
-namespace MAX.Bot.Interfaces;
+namespace MAX.Bot.Interfaces.Models;
 
 /// <summary>
 /// Модель обновления

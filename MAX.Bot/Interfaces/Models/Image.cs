@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace MAX.Bot.Interfaces;
+namespace MAX.Bot.Interfaces.Models;
 
 /// <summary>
 /// Модель изображения
