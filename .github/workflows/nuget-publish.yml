@@ -37,8 +37,22 @@ jobs:
     - name: Check folder
       run: pwd
 
-    - name: Check folder
-      run: ls
+    - name: List ALL files
+      run: |
+        echo "=== COMPLETE FILE LIST ==="
+        find . -type f | sort
+        echo ""
+        echo "=== TOTAL FILE COUNT ==="
+        find . -type f | wc -l
+        echo ""
+        echo "=== GIT STATUS ==="
+        git status
+        echo ""
+        echo "=== GIT BRANCH ==="
+        git branch -a
+        echo ""
+        echo "=== GIT SUBMODULES ==="
+        git submodule status
 
     - name: Find and restore project
       id: find_project
