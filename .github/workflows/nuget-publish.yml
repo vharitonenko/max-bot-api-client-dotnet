@@ -12,7 +12,6 @@ on:
 env:
   DOTNET_VERSION: '10.0.x'
   BUILD_CONFIGURATION: 'Release'
-  NUGET_SOURCE: 'https://api.nuget.org/v3/index.json'
   PROJECT_PATH: 'MAX.Bot/MAX.Bot.csproj'
 
 jobs:
@@ -62,8 +61,6 @@ jobs:
         dotnet-version: ${{ env.DOTNET_VERSION }}
     
     - name: Publish to NuGet.org
-      env:
-        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
       run: |
         echo "Publishing packages to NuGet.org..."
         
@@ -80,7 +77,7 @@ jobs:
         
         # Публикуем пакет
         dotnet nuget push "$PACKAGE_FILE" \
-          --source "${{ env.NUGET_SOURCE }}" \
+          --source "https://api.nuget.org/v3/index.json" \
           --api-key "${{ secrets.NUGET_API_KEY }}" \
           --skip-duplicate \
           --timeout 300
