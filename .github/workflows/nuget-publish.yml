@@ -131,7 +131,6 @@ jobs:
         
         # Публикуем пакет
         dotnet nuget push "$PACKAGE_FILE" \
-          --source "nuget.org" \
           --api-key "${{ secrets.NUGET_API_KEY }}" \
           --skip-duplicate \
           --no-symbols \
